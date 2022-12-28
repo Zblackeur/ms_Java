@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id : ClientRoute
+          uri : http://localhost:8081
+          predicates :
+            - Path= /clients/**
+
+        - id : ProduitRoute
+          uri: http://localhost:8082
+          predicates :
+              - Path= /produits/**
